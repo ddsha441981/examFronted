@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <mat-card>
+                    <div class="container text-center">
+                        <img src="../../../assets/register1.png" width="150px" height="150px" alt="">
+                    </div>
+                    <h1 class="text-center">Login Here!!</h1>
+
+                    <!-- For Print Data of  Json by using Pipe Filter -->
+                    <!-- {{loginData | json}} -->
+                    <form (ngSubmit)="loginFormSubmit()">
+                        <!--Username field-->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>User Name</mat-label>
+                            <input [(ngModel)]="loginData.username" required name="username" matInput placeholder="Enter Here!">
+                            <mat-hint>Vaild Username!!</mat-hint>
+                        </mat-form-field>
+
+                        <!--Password field-->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input [(ngModel)]="loginData.password" required name="password" type="password" matInput placeholder="Enter Here!">
+                        </mat-form-field>
+
+                        <div class="container text-center">
+
+                            <button type="submit" mat-raised-button color="primary">Login</button>
+                            <button type="reset" class="ml20" mat-raised-button color="accent">Reset</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
