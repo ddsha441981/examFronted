@@ -26,6 +26,8 @@ import { MatListModule } from '@angular/material/list';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { Error404Component } from './pages/errorpage/error404/error404.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 // import { MatTableModule } from '@angular/material/table';
 
 
@@ -42,7 +44,9 @@ import { Error404Component } from './pages/errorpage/error404/error404.component
     ProfileComponent,
     SidebarComponent,
     WelcomeComponent,
-    Error404Component
+    Error404Component,
+    ViewCategoriesComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,

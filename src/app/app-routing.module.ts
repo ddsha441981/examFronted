@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { Error404Component } from './pages/errorpage/error404/error404.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -57,7 +59,17 @@ const routes: Routes = [
       {
         path: 'error404',
         component:Error404Component,
-      }
+      },
+
+      {
+        path: 'categories',
+        component: ViewCategoriesComponent,
+      },
+
+      {
+        path: 'add-category',
+        component: AddCategoryComponent,
+      },
     ],
   },
 

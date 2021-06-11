@@ -11,14 +11,14 @@ export class LoginService {
   //event
   public loginStatusSubject =  new Subject<boolean>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
   // Login Service
 
   //Generate Token
   public generateToken(loginData: any) {
 
-    return this.http.post(`${baseUrl}/generate-token`, loginData);
+    return this._http.post(`${baseUrl}/generate-token`, loginData);
   }
 
   //Login User : Set token in LocalStorage
@@ -29,7 +29,7 @@ export class LoginService {
 
   //Current User :  get current loggedin user
   public getCurrentUser(){
-    return this.http.get(`${baseUrl}/current-user`);
+    return this._http.get(`${baseUrl}/current-user`);
   }
 
   //User is Logged in or not
@@ -78,7 +78,7 @@ export class LoginService {
 
   // get all users count for admin 
   public getUserCount(){
-    return this.http.get(`${baseUrl}/usercount`);
+    return this._http.get(`${baseUrl}/usercount`);
   }
 
 }
