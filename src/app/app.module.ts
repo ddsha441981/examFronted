@@ -28,6 +28,10 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { Error404Component } from './pages/errorpage/error404/error404.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 // import { MatTableModule } from '@angular/material/table';
 
 
@@ -46,7 +50,9 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     WelcomeComponent,
     Error404Component,
     ViewCategoriesComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    ViewQuizzesComponent,
+    AddQuizComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +68,8 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     MatToolbarModule,
     MatIconModule,
     MatListModule,
+    MatSlideToggleModule,
+    MatSelectModule,
     // MatTableModule,
   ],
   providers: [AuthInterceptorProviders],

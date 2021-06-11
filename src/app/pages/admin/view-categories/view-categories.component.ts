@@ -34,7 +34,8 @@ export class ViewCategoriesComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this._categories.categories().subscribe((data: any)=>{
+    this._categories.categories().subscribe(
+      (data: any)=>{
       //success
       this.categories = data;
       console.log(this.categories);
