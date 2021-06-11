@@ -32,6 +32,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Authors
 
-- [@katherinepeterson](https://github.com/ddsha441981/examFronted)
+- [@ddsha441981](https://github.com/ddsha441981/examFronted)
 
   
