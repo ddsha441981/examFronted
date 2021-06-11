@@ -1,4 +1,8 @@
-# ExamFronted
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
+  # Exam Portal Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
@@ -25,3 +29,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Authors
+
+- [@katherinepeterson](https://github.com/ddsha441981/examFronted)
+
+  
