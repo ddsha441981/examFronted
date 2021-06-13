@@ -43,7 +43,7 @@ export class ViewCategoriesComponent implements OnInit {
     (error)=>{
       //error
       console.log(error);
-      Swal.fire("Error!!","Server Error data is not loading!!!",'error');
+      Swal.fire("Error","Error in Lodaing data from the server",'error');
     });
   }
 

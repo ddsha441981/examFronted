@@ -16,16 +16,6 @@ interface Food {
   styleUrls: ['./add-quiz.component.css']
 })
 export class AddQuizComponent implements OnInit {
-
-
-
-  
-    foods: Food[] = [
-      {value: 'steak-0', viewValue: 'Steak'},
-      {value: 'pizza-1', viewValue: 'Pizza'},
-      {value: 'tacos-2', viewValue: 'Tacos'}
-    ];
-
   // Form data binding
   quizData = {
     title: '',
@@ -112,7 +102,7 @@ export class AddQuizComponent implements OnInit {
           this.quizData.maxMarks = '',
           this.quizData.numberOfQuestions = '',
           this.quizData.category.cid = '',
-          Swal.fire('Success', 'Quiz added successfully!!', 'success');
+          Swal.fire('Success', 'Quiz added!!', 'success');
         },
         (error)=>{
           //error
