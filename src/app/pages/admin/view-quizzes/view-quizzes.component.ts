@@ -65,4 +65,34 @@ export class ViewQuizzesComponent implements OnInit {
     
    }
 
+   //delete Quiz
+   deleteQuiz(qid){
+    Swal.fire({
+      icon: 'warning',
+      title: 'Are you sure ?',
+      confirmButtonText: 'Delete',
+      showCancelButton: true,
+    }).then((result)=>{
+
+      if(result.isConfirmed){
+
+        //delete here
+
+        this._quizService.quizDelete(qid).subscribe(
+          (data)=>{
+            //quiz filter after deleting
+            this.quizdata = this.quizdata = this.quizdata.filter((quiz)=>quiz.qid != qid);
+            //success
+            Swal.fire('Success','Quiz deleted!!','success');
+          },
+          (error)=>{
+            //error
+            Swal.fire('Error','Error in deleting quiz','error');
+          },
+        );
+    
+      }
+    });
+  }
+
 }

@@ -32,17 +32,22 @@
                             <input required [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Enter Here!">
                         </mat-form-field>
 
-                        <!--Firstname field-->
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>First Name</mat-label>
-                            <input required [(ngModel)]="user.firstName" name="firstName" matInput placeholder="Enter Here!">
-                        </mat-form-field>
-
-                        <!--Lastname field-->
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Last Name</mat-label>
-                            <input required [(ngModel)]="user.lastName" name="lastName" matInput placeholder="Enter Here!">
-                        </mat-form-field>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!--Firstname field-->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>First Name</mat-label>
+                                    <input required [(ngModel)]="user.firstName" name="firstName" matInput placeholder="Enter Here!">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!--Lastname field-->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Last Name</mat-label>
+                                    <input required [(ngModel)]="user.lastName" name="lastName" matInput placeholder="Enter Here!">
+                                </mat-form-field>
+                            </div>
+                        </div>
 
                         <!--Email field-->
                         <mat-form-field class="full-width" appearance="outline">
