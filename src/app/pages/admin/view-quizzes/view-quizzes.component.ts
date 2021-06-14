@@ -48,49 +48,52 @@ export class ViewQuizzesComponent implements OnInit {
     // },
   ];
 
-  constructor(private _quizService : QuizService) { }
+  constructor(private _quizService: QuizService) { }
 
   ngOnInit(): void {
     this._quizService.quizess().subscribe(
-      (data:any)=>{
-      //success
+      (data: any) => {
+        //success
         this.quizdata = data;
-        console.log(this.quizdata)
-    },
-    (error)=>{
-     //error
-     console.log(error);
-     Swal.fire('Error','Error in Lodaing data from the server','error');
-    });
-    
-   }
+      },
+      (error) => {
+        //error
+        console.log(error);
+        Swal.fire('Error', 'Error in Lodaing data from the server', 'error');
+      });
 
-   //delete Quiz
-   deleteQuiz(qid){
+    // if (this.active == false){
+
+    // }
+
+  }
+
+  //delete Quiz
+  deleteQuiz(qid) {
     Swal.fire({
       icon: 'warning',
       title: 'Are you sure ?',
       confirmButtonText: 'Delete',
       showCancelButton: true,
-    }).then((result)=>{
+    }).then((result) => {
 
-      if(result.isConfirmed){
+      if (result.isConfirmed) {
 
         //delete here
 
         this._quizService.quizDelete(qid).subscribe(
-          (data)=>{
+          (data) => {
             //quiz filter after deleting
-            this.quizdata = this.quizdata = this.quizdata.filter((quiz)=>quiz.qid != qid);
+            this.quizdata = this.quizdata = this.quizdata.filter((quiz) => quiz.qid != qid);
             //success
-            Swal.fire('Success','Quiz deleted!!','success');
+            Swal.fire('Success', 'Quiz deleted!!', 'success');
           },
-          (error)=>{
+          (error) => {
             //error
-            Swal.fire('Error','Error in deleting quiz','error');
+            Swal.fire('Error', 'Error in deleting quiz', 'error');
           },
         );
-    
+
       }
     });
   }

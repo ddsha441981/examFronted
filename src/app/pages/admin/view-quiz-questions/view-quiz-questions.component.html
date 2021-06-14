@@ -1,7 +1,11 @@
 <h1 class="mt20">Questions of {{qTitle}}</h1>
+
 <div class="bootstrap-wrapper">
     <div class="row">
         <div class="col-md-12">
+            <div class="container text-center">
+                <button [routerLink]="'/admin/add-questions/' +qId+'/'+qTitle" mat-raised-button color="primary">Add Questions</button>
+            </div>
             <mat-card *ngFor="let q of questions ; let i = index" class="mt20">
                 <mat-card-content>
                     <p>
@@ -29,13 +33,13 @@
                                 <p><b>(D) </b>{{q.option4}}</p>
                             </div>
                         </div>
-
                         <mat-divider></mat-divider>
                         <p class="mt20">
                             <b>Correct Answer:</b> {{q.answer}}
                         </p>
+                        <button [routerLink]="'/admin/question/'+q.quesId" mat-raised-button color="accent" class="ml20">Update</button>
+                        <button mat-raised-button color="warn" class="ml20">Delete</button>
                     </div>
-
                 </mat-card-content>
             </mat-card>
         </div>

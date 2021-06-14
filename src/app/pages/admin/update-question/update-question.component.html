@@ -1,0 +1,80 @@
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Update Question of : {{updateQuestion.quiz.title}}</h1>
+
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-subtitle>
+                        Enter the detail of the new question!!
+                    </mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <form class="mt20">
+                        <!-- content field -->
+                        <mat-form-field appearance="fill" class="w100">
+                            <mat-label>Question Content</mat-label>
+                            <textarea required [(ngModel)]="updateQuestion.content" name="content" type="text" rows="10" matInput></textarea>
+                        </mat-form-field>
+
+                        <!-- Option 1  -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w100">
+                                    <mat-label>Option 1</mat-label>
+                                    <input required [(ngModel)]="updateQuestion.option1" type="text" name="option1" placeholder="Enter Here....." matInput>
+                                </mat-form-field>
+                            </div>
+
+                            <!-- Option 2  -->
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w100">
+                                    <mat-label>Option 2</mat-label>
+                                    <input required [(ngModel)]="updateQuestion.option2" type="text" name="option2" placeholder="Enter Here....." matInput>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Option 3  -->
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w100">
+                                    <mat-label>Option 3</mat-label>
+                                    <input [(ngModel)]="updateQuestion.option3" type="text" name="option3" placeholder="Enter Here....." matInput>
+                                </mat-form-field>
+                            </div>
+                            <!-- Option 4  -->
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w100">
+                                    <mat-label>Option 4</mat-label>
+                                    <input [(ngModel)]="updateQuestion.option4" type="text" name="option4" placeholder="Enter Here....." matInput>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- answer -->
+                        <mat-form-field appearance="fill" class="w100">
+                            <mat-label>
+                                <---Select Answer--->
+                            </mat-label>
+                            <mat-select required [(ngModel)]="updateQuestion.answer" name="answer">
+                                <mat-option *ngIf="updateQuestion.option1" [value]="updateQuestion.option1">{{updateQuestion.option1}}</mat-option>
+                                <mat-option *ngIf=" updateQuestion.option2" [value]="updateQuestion.option2">{{updateQuestion.option2}}</mat-option>
+                                <mat-option *ngIf="updateQuestion.option3" [value]="updateQuestion.option3">{{updateQuestion.option3}}</mat-option>
+                                <mat-option *ngIf=" updateQuestion.option4" [value]="updateQuestion.option4">{{updateQuestion.option4}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary">Add</button>
+                            <button type="reset" class="ml20" mat-raised-button color="accent">Clear</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+    </div>
+</div>
+{{updateQuestion | json}}

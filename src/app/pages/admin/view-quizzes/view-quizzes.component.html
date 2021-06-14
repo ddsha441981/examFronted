@@ -18,6 +18,7 @@
         <button mat-flat-button color="accent" class="ml20">Attempts</button>
         <button [routerLink]="'/admin/quiz/' + q.qid" mat-flat-button color="primary" class="ml20">Update</button>
         <button mat-flat-button color="warn" class="ml20" (click)="deleteQuiz(q.qid)">DELETE</button>
+        <button mat-stroked-button color="accent" class="ml20">Quiz Publish : {{q.active}}</button>
     </mat-card-action>
 </mat-card>
 

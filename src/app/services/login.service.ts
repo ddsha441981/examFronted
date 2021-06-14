@@ -78,7 +78,7 @@ export class LoginService {
 
   // get all users count for admin 
   public getUserCount(){
-    return this._http.get(`${baseUrl}/usercount`);
+    return this._http.get(`${baseUrl}/user/usercount/`);
   }
 
 }

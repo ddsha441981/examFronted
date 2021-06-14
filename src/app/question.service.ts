@@ -9,7 +9,17 @@ export class QuestionService {
 
   constructor(private _http: HttpClient) { }
 
-  public getQuestionsOfQuiz(qid){
+  public getQuestionsOfQuiz(qid) {
     return this._http.get(`${baseUrl}/question/quiz/all/${qid}`);
+  }
+
+  //add questions
+  public addQuestion(questions){
+    return this._http.post(`${baseUrl}/question/`,questions);
+  }
+
+  //getting particular question from the sever by using Id
+  public particularQuestionById(quesId){
+    return this._http.get(`${baseUrl}/question/${quesId}`);
   }
 }
