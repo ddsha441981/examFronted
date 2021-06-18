@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-    constructor(private snackBar : MatSnackBar ,private loginService: LoginService, private router: Router) { }
+    constructor(private snackBar: MatSnackBar , private loginService: LoginService, private router: Router) { }
 
     // Login Object
   loginData = {
@@ -23,58 +23,62 @@ export class LoginComponent implements OnInit {
 
   // Login form Submit method
   loginFormSubmit(){
-    console.log("Login Button Clicked");
+    console.log('Login Button Clicked');
     console.log(this.loginData);
 
-    //Validations of login form
-    //For Username
+    // Validations of login form
+    // For Username
+    // tslint:disable-next-line:triple-equals
     if (this.loginData.username.trim() == '' || this.loginData.username == null){
       // alert("Username required");
       // MatSnackBar
-      this.snackBar.open("Username is required!!!","OK",{
-        duration:3000,
+      this.snackBar.open('Username is required!!!', 'OK', {
+        duration: 3000,
       });
       return;
     }
 
-    //For Password
+    // For Password
+    // tslint:disable-next-line:triple-equals
     if (this.loginData.password.trim() == '' || this.loginData.password == null){
       // alert("Password required");
-      this.snackBar.open("Password is required!!!","ok",{
-        duration:3000,
+      this.snackBar.open('Password is required!!!', 'ok', {
+        duration: 3000,
       });
       return;
     }
 
     // Request to server to generate JWT Token
-      this.loginService.generateToken(this.loginData).subscribe(
-        (data:any)=>{
-          //Success
+    this.loginService.generateToken(this.loginData).subscribe(
+        (data: any) => {
+          // Success
           console.log(data);
           // alert("Succeessfully Token genrated!!!");
 
-          //After Successfully generated token then login from here!!!
+          // After Successfully generated token then login from here!!!
           this.loginService.loginUser(data.token);
 
-          //getting current user
+          // getting current user
           this.loginService.getCurrentUser().subscribe(
-            (user:any)=>{
+            (user: any) => {
 
-              //save user data into localStorage
+              // save user data into localStorage
               this.loginService.setUser(user);
               console.log(user);
 
-              //redirect: ...ADMIN: Admin-Dashboard
-              if (this.loginService.getUserRole() == "ADMIN"){
-                //reDirect Admin DashBoard
+              // redirect: ...ADMIN: Admin-Dashboard
+              // tslint:disable-next-line:triple-equals
+              if (this.loginService.getUserRole() == 'ADMIN'){
+                // reDirect Admin DashBoard
                 // window.location.href="/admin";
                 this.router.navigate(['admin']);
                 this.loginService.loginStatusSubject.next(true);
 
 
-                //redirect: ...NORMAL: Normal-Dashboard
-              }else if (this.loginService.getUserRole() == "NORMAL"){
-                  //reDirect User DashBoard
+                // redirect: ...NORMAL: Normal-Dashboard
+                // tslint:disable-next-line:triple-equals
+              }else if (this.loginService.getUserRole() == 'NORMAL'){
+                  // reDirect User DashBoard
                   // window.location.href="/user-dashboard";
                   this.router.navigate(['user-dashboard']);
                   this.loginService.loginStatusSubject.next(true);
@@ -87,13 +91,13 @@ export class LoginComponent implements OnInit {
 
 
             },
-          )
+          );
 
         },
-        (error)=>{
-          //Error Occured
-          console.log("Oops...","Seems like Something went wrong!!!",error);
-          this.snackBar.open("Invaild credentials!!! Try Agin","ok",{
+        (error) => {
+          // Error Occured
+          console.log('Oops...', 'Seems like Something went wrong!!!', error);
+          this.snackBar.open('Invaild credentials!!! Try Agin', 'ok', {
             duration: 3000,
           });
         }

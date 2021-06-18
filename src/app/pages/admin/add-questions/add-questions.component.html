@@ -13,17 +13,18 @@
                 <mat-card-content>
                     <form (ngSubmit)="addQuestions()" class="mt20">
                         <!-- content field -->
-                        <mat-form-field appearance="fill" class="w100">
-                            <mat-label>Question Content</mat-label>
-                            <textarea required [(ngModel)]="questions.content" name="content" type="text" rows="10" matInput></textarea>
-                        </mat-form-field>
+<!--                        <mat-form-field appearance="fill" class="w100">-->
+<!--                            <mat-label>Question Content</mat-label>-->
+<!--                            <textarea required [(ngModel)]="questions.content" name="content" type="text" rows="10" matInput></textarea>-->
+<!--                        </mat-form-field>-->
 
+                         <ckeditor [editor]="Editor" name="content" [(ngModel)]="questions.content"></ckeditor>
                         <!-- Option 1  -->
                         <div class="row">
                             <div class="col-md-6">
                                 <mat-form-field appearance="fill" class="w100">
                                     <mat-label>Option 1</mat-label>
-                                    <input required [(ngModel)]="questions.option1" type=" text " name="option1 " placeholder="Enter Here..... " matInput>
+                                    <input required [(ngModel)]="questions.option1" type="text" name="option1" placeholder="Enter Here....." matInput>
                                 </mat-form-field>
                             </div>
 
@@ -41,12 +42,12 @@
                             <div class="col-md-6">
                                 <mat-form-field appearance="fill" class="w100">
                                     <mat-label>Option 3</mat-label>
-                                    <input [(ngModel)]="questions.option3" type=" text " name="option3 " placeholder="Enter Here..... " matInput>
+                                    <input [(ngModel)]="questions.option3" type="text" name="option3" placeholder="Enter Here....." matInput>
                                 </mat-form-field>
                             </div>
                             <!-- Option 4  -->
                             <div class="col-md-6">
-                                <mat-form-field appearance="fill" class="w100">
+                                <mat-form-field appearance="fill" class="w100 ">
                                     <mat-label>Option 4</mat-label>
                                     <input [(ngModel)]="questions.option4" type="text" name="option4" placeholder="Enter Here....." matInput>
                                 </mat-form-field>

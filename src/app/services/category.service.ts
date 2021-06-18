@@ -11,19 +11,19 @@ export class CategoryService {
 
   // load all the categories
   public categories(){
-    return this._http.get(`${baseUrl}/category/`)
+    return this._http.get(`${baseUrl}/category/`);
   }
 
   // Add category
   public addCategory(category){
 
-    return this._http.post(`${baseUrl}/category/`,category);
+    return this._http.post(`${baseUrl}/category/`, category);
   }
 
-  //delete category
+  // delete category
   public deleteCategory(categoryId){
     //
-    return this._http.delete(`${baseUrl}/category/`,categoryId);
+    return this._http.delete(`${baseUrl}/category/`, categoryId);
   }
 }
 

@@ -8,6 +8,27 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class WelcomeComponent implements OnInit {
 
+  cardList = [
+    {
+      cid:23,
+      title:"programming",
+    },
+
+    {
+      cid:23,
+      title:"programming",
+    },
+
+    {
+      cid:23,
+      title:"programming",
+    },
+
+    {
+      cid:23,
+      title:"programming",
+    },
+  ];
     //this is a variable that hold number
     users= 0;
     //same process

@@ -36,6 +36,11 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 // import { MatTableModule } from '@angular/material/table';
 
 
@@ -78,6 +83,9 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
     MatListModule,
     MatSlideToggleModule,
     MatSelectModule,
+    FlexLayoutModule,
+    CKEditorModule,
+    // AngularFontAwesomeModule,
     // MatTableModule,
   ],
   providers: [AuthInterceptorProviders],

@@ -37,10 +37,14 @@
                         <p class="mt20">
                             <b>Correct Answer:</b> {{q.answer}}
                         </p>
-                        <button [routerLink]="'/admin/question/'+q.quesId" mat-raised-button color="accent" class="ml20">Update</button>
-                        <button mat-raised-button color="warn" class="ml20">Delete</button>
                     </div>
                 </mat-card-content>
+
+                <mat-card-action>
+                    <button [routerLink]="'/admin/question/'+q.quesId" mat-raised-button color="accent" class="ml20">Update</button>
+                    <button (click)="deleteQuestionById(q.quesId)" mat-raised-button color="warn" class="ml20">Delete</button>
+                </mat-card-action>
+
             </mat-card>
         </div>
     </div>
