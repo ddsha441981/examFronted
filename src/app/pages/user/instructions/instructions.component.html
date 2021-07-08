@@ -1,0 +1,63 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card class="mt20">
+                    <mat-card-header>
+                        <!-- Heading -->
+                        <mat-card-title>
+                            <!-- Title -->
+                            Read the instructions of this page carefully!!!
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <!-- Sub Title -->
+                            One Step more to go
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="ml20">
+                        <!-- Content -->
+                        <h1> {{quizessData.title}}</h1>
+                        <p>{{quizessData.description}}</p>
+                        <mat-divider></mat-divider>
+
+                        <br>
+
+                        <h1>Important Instructions</h1>
+                        <ul>
+                            <!--Every questions have 2 min only -->
+                            <li>Total time to solve Time is : <b>{{quizessData.numberOfQuestions * 2}}</b></li>
+                            <li>No Of Questions : <b>{{quizessData.numberOfQuestions}}</b> </li>
+                            <li>Each question carries : <b>{{quizessData.maxMarks /quizessData.numberOfQuestions}}</b> </li>
+                            <li>This quiz is testing purpose</li>
+                            <li>This quiz is testing purpose</li>
+                            <li>This quiz is testing purpose</li>
+                            <li>This quiz is testing purpose</li>
+                            <li>This quiz is testing purpose</li>
+                            <li>This quiz is testing purpose</li>
+                        </ul>
+
+                        <mat-divider></mat-divider>
+                        <br/>
+                        <h1>Attempting Quiz</h1>
+                        <ul>
+                            <li>Click <b>Start Quiz</b> to start quiz</li>
+                            <li>The will start </li>
+                            <li>The will start </li>
+                            <li>The will start </li>
+                            <li>The will start </li>
+                            <li>The will start </li>
+                            <li>The will start </li>
+                            <li>The will start </li>
+
+                        </ul>
+
+                    </mat-card-content>
+                    <mat-card-actions class="text-center">
+                        <!-- Action -->
+                        <button (click)="startQuiz()" mat-raised-button color="accent">Start Quizz</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

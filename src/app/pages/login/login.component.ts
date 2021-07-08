@@ -67,7 +67,6 @@ export class LoginComponent implements OnInit {
               console.log(user);
 
               // redirect: ...ADMIN: Admin-Dashboard
-              // tslint:disable-next-line:triple-equals
               if (this.loginService.getUserRole() == 'ADMIN'){
                 // reDirect Admin DashBoard
                 // window.location.href="/admin";
@@ -80,7 +79,7 @@ export class LoginComponent implements OnInit {
               }else if (this.loginService.getUserRole() == 'NORMAL'){
                   // reDirect User DashBoard
                   // window.location.href="/user-dashboard";
-                  this.router.navigate(['user-dashboard']);
+                  this.router.navigate(['user-dashboard/0']);
                   this.loginService.loginStatusSubject.next(true);
 
               }

@@ -26,11 +26,26 @@ export class QuizService {
 
   //get the single quiz
   public getSingleQuiz(qid){
-    return this._http.get(`${baseUrl}/quiz/${qid}`)
+    return this._http.get(`${baseUrl}/quiz/${qid}`);
   }
 
   //update the quiz by Id
   public updatingQuizById(quizUpdate){
     return this._http.put(`${baseUrl}/quiz/`,quizUpdate);
+  }
+
+  // Get Specfic Quizzes by Category
+  public getQuizzesOfCategory(cid){
+    return this._http.get(`${baseUrl}/quiz/category/${cid}`);
+  }
+
+
+  // Get Active Quizzs
+  public getActiveQuzzes(){
+    return this._http.get(`${baseUrl}/quiz/active`);
+  }
+
+  public getActiveQuzzesOfCategory(cid){
+    return this._http.get(`${baseUrl}/quiz/active/category/${cid}`);
   }
 }

@@ -36,8 +36,12 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
 
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
@@ -65,7 +69,11 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UpdateQuizComponent,
     ViewQuizQuestionsComponent,
     AddQuestionsComponent,
-    UpdateQuestionComponent
+    UpdateQuestionComponent,
+    UserSidebar,
+    LoadQuizComponent,
+    InstructionsComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,9 +91,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     MatListModule,
     MatSlideToggleModule,
     MatSelectModule,
-    FlexLayoutModule,
     CKEditorModule,
-    // AngularFontAwesomeModule,
+    NgxChartsModule,
     // MatTableModule,
   ],
   providers: [AuthInterceptorProviders],

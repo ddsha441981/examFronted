@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import * as CanvasJS from '../../../../assets/canvas/canvasjs.min';
 
 @Component({
   selector: 'app-welcome',
@@ -7,6 +8,15 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+
+   //Chart Data 
+   saleData = [
+    { name: "Mobiles", value: 105000 },
+    { name: "Laptop", value: 55000 },
+    { name: "AC", value: 15000 },
+    { name: "Headset", value: 150000 },
+    { name: "Fridge", value: 20000 }
+  ];
 
   cardList = [
     {
@@ -49,7 +59,7 @@ export class WelcomeComponent implements OnInit {
         console.log(error);
       },
     );
-
+    
   }
   //we have created setinterval function with arrow function and
   //and set them in a variable that is projectcountstop.
