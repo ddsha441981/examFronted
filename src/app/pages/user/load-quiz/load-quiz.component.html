@@ -17,12 +17,12 @@
                         <p class="truncate">{{q.description}}</p>
                     </mat-card-content>
 
-                    <mat-card-action>
-                        <button mat-raised-button color="primary"> View</button>
-                        <button mat-raised-button color="accent" class="ml10" [routerLink]="'/user-dashboard/instructions/'+q.qid"> Start</button>
-                        <button mat-button color="primary"> Questions: {{q.numberOfQuestions}}</button>
-                        <button mat-button color="accent"> M M: {{q.maxMarks}}</button>
-                    </mat-card-action>
+                    <mat-card-actions>
+                        <button mat-button color="primary"> View</button>
+                        <button mat-button color="accent" class="ml20" [routerLink]="'/user-dashboard/instructions/'+q.qid"> Start</button>
+                        <button mat-button color="primary"> Q:{{q.numberOfQuestions}}</button>
+                        <button mat-button color="accent"> M M:{{q.maxMarks}}</button>
+                    </mat-card-actions>
                 </mat-card>
             </div>
             <div class="col-md-12" *ngIf="quizzList.length==0">

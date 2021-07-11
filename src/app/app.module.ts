@@ -42,9 +42,8 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartComponent } from './pages/user/start/start.component';
-
-// import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 // import { MatTableModule } from '@angular/material/table';
 
 
@@ -93,6 +92,11 @@ import { StartComponent } from './pages/user/start/start.component';
     MatSelectModule,
     CKEditorModule,
     NgxChartsModule,
+    MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true,
+    }),
     // MatTableModule,
   ],
   providers: [AuthInterceptorProviders],
