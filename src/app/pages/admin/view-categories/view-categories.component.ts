@@ -38,7 +38,7 @@ export class ViewCategoriesComponent implements OnInit {
       (data: any)=>{
       //success
       this.categories = data;
-      console.log(this.categories);
+      // console.log(this.categories);
     },
     (error)=>{
       //error
@@ -46,5 +46,38 @@ export class ViewCategoriesComponent implements OnInit {
       Swal.fire("Error","Error in Lodaing data from the server",'error');
     });
   }
+
+  // Delete Category
+  deleteCategory(cid){
+    
+    Swal.fire({
+      icon: 'warning',
+      title: 'Are you sure ?',
+      confirmButtonText: 'Delete',
+      showCancelButton: true,
+    }).then((result) => {
+
+      if (result.isConfirmed) {
+
+        //delete here
+        this._categories.deleteCategory(cid).subscribe(
+          (data) => {
+            //quiz filter after deleting
+            this.categories = this.categories = this.categories.filter((category) => category.cid != cid);
+            // console.log(cid);
+            // console.log(this.categories);
+            //success
+            Swal.fire('Success', 'Category deleted!!', 'success');
+          },
+          (error) => {
+            //error
+            Swal.fire('Error', 'Error in deleting Category', 'error');
+          },
+        );
+
+      }
+    });
+  }
+  
 
 }

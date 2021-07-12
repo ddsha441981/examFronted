@@ -43,10 +43,11 @@ export class StartComponent implements OnInit {
         // Timmer will start while questions is loading
         this.isTimer = this.questions.length * 2 * 60;
 
-        // add new key and value for user given answers
-        this.questions.forEach((q)=>{
-          q['givenAnswer'] = '';
-        });
+        // // add new key and value for user given answers
+        // this.questions.forEach((q)=>{
+        //   q['givenAnswer'] = '';
+        // });
+
         console.log(this.questions);
         //Start timer function here
         this.startTimmer();
@@ -101,30 +102,44 @@ export class StartComponent implements OnInit {
   getFormatedTime(){
     let min = Math.floor(this.isTimer / 60);
     let sec = this.isTimer - min * 60;
-    // console.log('${mm} Min : ${ss} Sec');
-    // console.log("Min" ,mm);
-    // console.log("Sec" ,ss);
-    return '${min} Min : ${sec} Sec';
+    return `${min} Min : ${sec} Sec`;
+    
   }
 
   evalQuiz() {
-    this.isSubmit = true;
-                //calculations here
-                this.questions.forEach((q)=>{
-                  if (q.givenAnswer == q.answer){
-                      this.correctAnswers++;
-                      let marksSingle = this.questions[0].quiz.maxMarks / this.questions.length;
-                      this.marksGot += marksSingle;
-                  }
-                  //Calculating attpemting questions
-                  if(q.givenAnswer.trim() != ''){
-                     this.attempted++;
-                  }
-                });
-                  console.log("Correct Answers :" + this.correctAnswers);
-                  console.log('Marks got' + this.marksGot);
-                  console.log('Question Attempted' + this.attempted++);
-                  console.log(this.questions);
+               //calculations here
+              //  Call to server to check questions
+              this._questionService.validateQuestionsAndAnswer(this.questions).subscribe(
+                (data:any)=>{
+                  console.log(data);
+                  this.marksGot = data.marksGot;
+                  this.correctAnswers = data.correctAnswers;
+                  this.attempted = data.attempted;
+                  this.isSubmit = true;
+                  console.log("=====================> " , this.correctAnswers);
+                },
+                (error)=>{
+                  //error
+                  console.log(error);
+                }
+              )
+
+        // this.isSubmit = true;
+    //             this.questions.forEach((q)=>{
+    //               if (q.givenAnswer == q.answer){
+    //                   this.correctAnswers++;
+    //                   let marksSingle = this.questions[0].quiz.maxMarks / this.questions.length;
+    //                   this.marksGot += marksSingle;
+    //               }
+    //               //Calculating attpemting questions
+    //               if(q.givenAnswer.trim() != ''){
+    //                  this.attempted++;
+    //               }
+    //             });
+                  // console.log("Correct Answers :" + this.correctAnswers);
+                  // console.log('Marks got' + this.marksGot);
+                  // console.log('Question Attempted' + this.attempted++);
+                  // console.log(this.questions);
   }
 
 }

@@ -27,9 +27,14 @@
             </div>
             <div class="col-md-12" *ngIf="quizzList.length==0">
                 <mat-card>
-                    <mat-card-content>
+                    <mat-card-content class="text-center">
                         <h1>No data Available in this Category</h1>
                     </mat-card-content>
+
+                    <mat-card-actions class="text-center">
+                        <button mat-raised-button color="primary" [routerLink]="'/user-dashboard/0'"> Home</button>
+                    </mat-card-actions>
+
                 </mat-card>
             </div>
         </div>

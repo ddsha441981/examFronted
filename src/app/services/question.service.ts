@@ -37,4 +37,9 @@ export class QuestionService {
   public deletingParticularQuestion(quesId){
     return this._http.delete(`${baseUrl}/question/${quesId}`);
   }
+
+  //to validate questions answers call to server and check questions answer on sever
+  public validateQuestionsAndAnswer(questions){
+    return this._http.post(`${baseUrl}/question/eval-quiz`,questions);
+  }
 }

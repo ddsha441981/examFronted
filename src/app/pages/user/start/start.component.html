@@ -59,8 +59,7 @@
                         </mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
-                        <h1 class="text-center">
-                            <!--{{ isTimer }} <br/> -->{{ getFormatedTime() }} </h1>
+                        <h1 class="text-center">{{ getFormatedTime() }} </h1>
                         <mat-spinner color="accent" mode="determinate" [value]="(isTimer / (this.questions.length * 2 * 60)) * 100" class="spinner_auto">
                         </mat-spinner>
                     </mat-card-content>
@@ -71,29 +70,45 @@
     </div>
 </div>
 
-<!-- Show the result -->
-<div class="bootstrap-wrapper" *ngIf=isSubmit>
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>
-                        Quiz Result
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content class="text-center">
-                    <h1>Marks Obtained: {{marksGot}}</h1>
-                    <h1>Correct Answers : {{correctAnswers}}</h1>
-                    <h1>Question Attemped: {{attempted}}</h1>
-                </mat-card-content>
+<!-- No data Available in this Quiz -->
+<div class="col-md-12" *ngIf="questions.length==0; else elseStatement">
+    <mat-card class="ml20 text-center">
+        <mat-card-content>
+            <h1>No data Available in this Quiz</h1>
+        </mat-card-content>
 
-                <!-- Buuton -->
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [routerLink]="'/user-dashboard/0'"> Home</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
 
-                <mat-card-actions class="text-center">
-                    <Button mat-raised-button color="primary">Print</Button>
-                    <Button mat-raised-button color="accent" [routerLink]="'/user-dashboard/0'">Home</Button>
-                </mat-card-actions>
-            </mat-card>
+<!-- else block when data is Available in inside any quiz then execute only that section -->
+<ng-template #elseStatement>
+    <!-- Show the result -->
+    <div class="bootstrap-wrapper" *ngIf=isSubmit>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>
+                            Quiz Result
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="text-center">
+                        <h1>Marks Obtained: {{marksGot}}</h1>
+                        <h1>Correct Answers : {{correctAnswers}}</h1>
+                        <h1>Question Attemped: {{attempted}}</h1>
+                    </mat-card-content>
+
+                    <!-- Buuton -->
+
+                    <mat-card-actions class="text-center">
+                        <button mat-raised-button color="primary" [routerLink]="'/user-dashboard/0'"> Home</button>
+                        <button mat-raised-button color="accent"> Print</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
         </div>
     </div>
-</div>
+</ng-template>

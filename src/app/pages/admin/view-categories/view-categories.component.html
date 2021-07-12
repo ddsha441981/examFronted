@@ -7,7 +7,7 @@
             <div mat-line>{{c.title}}</div>
             <div mat-line>{{c.description}}</div>
             <button mat-raised-button color="primary" class="ml20">Update</button>
-            <button mat-raised-button color="accent" class="ml20">Delete</button>
+            <button mat-raised-button color="accent" class="ml20" (click)="deleteCategory(c.cid)">Delete</button>
             <mat-divider></mat-divider>
         </mat-list-item>
     </mat-list>

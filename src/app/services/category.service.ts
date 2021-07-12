@@ -21,9 +21,8 @@ export class CategoryService {
   }
 
   // delete category
-  public deleteCategory(categoryId){
-    //
-    return this._http.delete(`${baseUrl}/category/`, categoryId);
+  public deleteCategory(cid){
+    return this._http.delete(`${baseUrl}/category/${cid}`);
   }
 }
 
