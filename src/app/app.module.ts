@@ -102,6 +102,7 @@ import { AboutQuizComponent } from './pages/user/about-quiz/about-quiz.component
       showForeground:true,
     }),
     // MatTableModule,
+    
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]

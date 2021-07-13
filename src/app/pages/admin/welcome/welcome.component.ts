@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
-import * as CanvasJS from '../../../../assets/canvas/canvasjs.min';
 
 @Component({
   selector: 'app-welcome',
