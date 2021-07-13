@@ -24,5 +24,14 @@ export class CategoryService {
   public deleteCategory(cid){
     return this._http.delete(`${baseUrl}/category/${cid}`);
   }
+  // get category by id
+  public getCategoryById(cid){
+    return this._http.get(`${baseUrl}/category/${cid}`);
+  }
+
+  // updating category 
+  public updatingCategory(category){
+    return this._http.put(`${baseUrl}/category/`,category);
+  }
 }
 

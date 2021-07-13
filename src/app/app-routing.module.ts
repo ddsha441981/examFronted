@@ -4,6 +4,7 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
 import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
@@ -15,6 +16,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AboutQuizComponent } from './pages/user/about-quiz/about-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { StartComponent } from './pages/user/start/start.component';
@@ -110,6 +112,11 @@ const routes: Routes = [
         component: UpdateQuestionComponent,
       },
 
+      {
+        path: 'category/:cid',
+        component: UpdateCategoryComponent,
+      },
+
     ],
   },
 
@@ -128,6 +135,12 @@ const routes: Routes = [
       {
         path: 'instructions/:qid',
         component: InstructionsComponent,
+      },
+
+      // about quiz view page
+      {
+        path: 'about-quiz/:qid',
+        component: AboutQuizComponent,
       },
 
     ],

@@ -44,6 +44,8 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { StartComponent } from './pages/user/start/start.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
+import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
+import { AboutQuizComponent } from './pages/user/about-quiz/about-quiz.component';
 // import { MatTableModule } from '@angular/material/table';
 
 
@@ -73,6 +75,8 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
     LoadQuizComponent,
     InstructionsComponent,
     StartComponent,
+    UpdateCategoryComponent,
+    AboutQuizComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,53 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card class="mt20">
+                    <mat-card-header>
+                        <!-- Heading -->
+                        <mat-card-title>
+                            <!-- Title -->
+                            Read Quiz Details!!!
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <!-- Sub Title -->
+                            Every questions have 2 min only
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="ml20">
+                        <!-- Content -->
+                        <h1> {{viewQuizData.title}}</h1>
+                        <p>{{viewQuizData.description}}</p>
+                        <mat-divider></mat-divider>
+
+                        <br/>
+
+                        <h1>Question Details</h1>
+                        <ul>
+                            <li>Total Questions: <b>{{viewQuizData.numberOfQuestions}}</b></li>
+                            <li>Total Marks: <b>{{viewQuizData.maxMarks}}</b> </li>
+
+                        </ul>
+
+                        <h1>Marks Details</h1>
+
+                        <ul>
+                            <!--Every questions have 2 min only -->
+                            <li>Total time to solve Time is : <b>{{viewQuizData.numberOfQuestions * 2}}</b></li>
+                            <li>No Of Questions : <b>{{viewQuizData.numberOfQuestions}}</b> </li>
+                            <li>Each question carries : <b>{{viewQuizData.maxMarks /viewQuizData.numberOfQuestions}}</b> </li>
+                        </ul>
+
+                        <mat-divider></mat-divider>
+                        <br/>
+
+                    </mat-card-content>
+                    <mat-card-actions class="text-center">
+                        <!-- Action -->
+                        <button mat-raised-button color="accent" [routerLink]="'/user-dashboard/instructions/'+viewQuizData.qid">Go</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
