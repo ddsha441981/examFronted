@@ -5,44 +5,107 @@
 
         <div class="bootstarp-wrapper">
             <div class="container">
-                <div class="container text-center">
-                    <img src="../../../assets/default.png" alt="" class="src" class="profile-image">
-                    <h1 mt20>{{user.firstName}} {{user.lastName}}</h1>
-                </div>
-
                 <div class="row">
-                    <div class="col-md-10 offset-md-1">
-                        <!-- //table -->
-                        <table class="table text-center">
-                            <tr>
-                                <td>User Name</td>
-                                <td>{{user.username}}</td>
-                            </tr>
-                            <tr>
-                                <td>User Id</td>
-                                <td>Exam{{user.id}}</td>
-                            </tr>
-                            <tr>
-                                <td>Phone</td>
-                                <td>{{user.phone}}</td>
-                            </tr>
-                            <tr>
-                                <td>Role</td>
-                                <td>{{user.authorities[0].authority}}</td>
-                            </tr>
-                            <tr>
-                                <td>Status</td>
-                                <td>{{user.enabled?"Active":"Not Active"}}</td>
-                            </tr>
-                        </table>
+                    <div class="card col-md-5">
+                        <!-- <img src="../../../assets/default.png" alt="" style="width:100%"> -->
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front text">
+
+                                    <img src="../../../assets/default.png" alt="" style="width:100%">
+                                </div>
+                                <div class="flip-box-back">
+
+                                    <img src="../../../assets/user_profile.png" alt="" style="width:297" height="297">
+                                </div>
+                            </div>
+                        </div>
+                        <h1>{{user.firstName}} {{user.lastName}}</h1>
+                        <p class="title">Software Engineer</p>
+                        <p>Harvard University</p>
+
+                        <p><button class="button1">Contact</button></p>
+                    </div>
+
+                    <!-- User Detail -->
+                    <div class="col-md-5">
+
+                        <mat-card>
+                            <mat-card-subtitle>User Name</mat-card-subtitle>
+                            <mat-card-content>
+                                <mat-card-title>
+                                    {{user.username}}
+                                </mat-card-title>
+                            </mat-card-content>
+
+                            <mat-divider></mat-divider>
+                            <mat-card-subtitle>User Id</mat-card-subtitle>
+                            <mat-card-content>
+                                <mat-card-title>
+                                    Exam{{user.id}}
+                                </mat-card-title>
+                            </mat-card-content>
+
+                            <mat-divider></mat-divider>
+                            <mat-card-subtitle>Phone Number</mat-card-subtitle>
+                            <mat-card-content>
+                                <mat-card-title>
+                                    {{user.phone}}
+                                </mat-card-title>
+                            </mat-card-content>
+
+                            <mat-divider></mat-divider>
+                            <mat-card-subtitle>Role</mat-card-subtitle>
+                            <mat-card-content>
+                                <mat-card-title>
+                                    {{user.authorities[0].authority}}
+                                </mat-card-title>
+                            </mat-card-content>
+
+                            <mat-divider></mat-divider>
+                            <mat-card-subtitle>Status</mat-card-subtitle>
+                            <mat-card-content>
+                                <mat-card-title>
+                                    {{user.enabled?"Active":"Not Active"}}
+                                </mat-card-title>
+                            </mat-card-content>
+
+                            <!-- Button -->
+                            <mat-card-actions class="text-center">
+                                <button mat-raised-button color="primary">Update</button>
+                                <button mat-raised-button color="accent">Share</button>
+                            </mat-card-actions>
+                        </mat-card>
+                    </div>
+
+                    <div class="col-md-2">
+                        <mat-card>
+                            <mat-card-subtitle>
+                                Social Media
+                            </mat-card-subtitle>
+                            <mat-card-content>
+                                <button class="button2 fb">Facebook</button>
+                                <mat-divider></mat-divider>
+                                <button class="button2 whatsapp mt20">Whatsapp</button>
+                                <mat-divider></mat-divider>
+                                <button class="button2 linkedin mt20">Linkdlen</button>
+                                <mat-divider></mat-divider>
+                                <button class="button2 twitter mt20">Tiwtter</button>
+                                <mat-divider></mat-divider>
+                                <button class="button2 google mt20">Gmail</button>
+                                <mat-divider></mat-divider>
+                                <!-- <button class="button2  mt20">Helo</button>
+                                <mat-divider></mat-divider>
+                                <button class="button2  mt20">Helo</button> -->
+
+                            </mat-card-content>
+                        </mat-card>
 
                     </div>
+
                 </div>
             </div>
         </div>
     </mat-card-content>
-    <mat-card-actions class="text-center">
-        <button mat-raised-button color="primary">Update</button>
-        <button mat-raised-button color="accent">Share</button>
-    </mat-card-actions>
+
 </mat-card>

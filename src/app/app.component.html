@@ -5,18 +5,8 @@
 <!-- Loader Blur -->
 <div ngxUiLoaderBlurred blur="10">
     <!-- This page content will be blurred/frosted when foreground loader is showed -->
+
     <!-- Static Content -->
     <app-navbar></app-navbar>
-    <!-- Dynamic Content -->
-
-    <div [ngClass]="isDarkTheme? 'dark-theme' : 'light-theme' ">
-        <mat-card>
-            <!-- <mat-slide-toggle > -->
-            <button mat-button>THEME:  <mat-icon (click)="toggleTheme()" matTooltip="Switch Theme">brightness_6</mat-icon></button>
-
-            <!-- </mat-slide-toggle> -->
-            <router-outlet></router-outlet>
-        </mat-card>
-    </div>
 
 </div>

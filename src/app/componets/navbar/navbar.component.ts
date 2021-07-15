@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 
   isLoggedIn = false;
   user = null;
+  isDarkTheme = false;
 
 //  constructor
   constructor(public loginService: LoginService){
@@ -17,7 +18,6 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     this.isLoggedIn = this.loginService.isLoggedIn();
     this.user = this.loginService.getUser();
     this.loginService.loginStatusSubject.asObservable().subscribe(data => {
@@ -27,7 +27,16 @@ export class NavbarComponent implements OnInit {
 
     });
 
-  }
+    // LocalStorge Dark theme when ng init() loading
+    this.isDarkTheme = localStorage.getItem('theme') === 'dark' ? true : false;
+
+}
+
+// Dark theme 
+    toggleTheme(){
+      this.isDarkTheme = !this.isDarkTheme;
+      localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
+    }
 
 //  Logout method
   public logout(){

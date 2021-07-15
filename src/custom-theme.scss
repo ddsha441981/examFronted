@@ -11,15 +11,9 @@
 // hue. Available color palettes: https://material.io/design/color/
 $examFronted-primary: mat-palette($mat-indigo);
 $examFronted-accent: mat-palette($mat-pink, A200, A100, A400);
-// The warn palette is optional (defaults to red).
 $examFronted-warn: mat-palette($mat-red);
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
 $examFronted-light-theme: mat-light-theme(( color: ( primary: $examFronted-primary, accent: $examFronted-accent, warn: $examFronted-warn, )));
 $examFronted-dark-theme: mat-dark-theme(( color: ( primary: $examFronted-primary, accent: $examFronted-accent, warn: $examFronted-warn, )));
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 .dark-theme {
     @include angular-material-theme($examFronted-dark-theme);
 }

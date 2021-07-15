@@ -1,25 +1,42 @@
 <!-- <h1>This is navbar</h1> -->
-<mat-toolbar color="accent">
-    <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>widgets</mat-icon>
-    </a>
-    <span>Exam Portal</span>
-    <span class="example-spacer"></span>
+<mat-sidenav-container mat-app-background [ngClass]="isDarkTheme? 'dark-theme' : 'light-theme' ">
+    <mat-toolbar color="primary">
+        <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>widgets</mat-icon>
+        </a>
+        <span>Exam Portal</span>
+        <span class="example-spacer"></span>
 
-    <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      Login
-    </a>
+        <mat-icon matTooltip="Switch Theme">light_mode</mat-icon>
+        <mat-slide-toggle (click)="toggleTheme()" ngx-tooltip></mat-slide-toggle>
+        <mat-icon>nights_stay</mat-icon>
 
-    <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-icon-button class="example-icon mr20 ml20" aria-label="Example icon-button with share icon">
-        Register
-    </a>
 
-    <a *ngIf=" isLoggedIn && user" routerLink="/admin/profile" mat-button class="example-icon mr20 ml20 " aria-label="Example icon-button with share icon ">
-        Welcome back :  {{user.username}}
-    </a>
 
-    <a (click)="logout()" *ngIf=" isLoggedIn " mat-icon-button class="example-icon  ml20 " aria-label="Example icon-button with share icon ">
-        Logout
-    </a>
+        <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+              Login
+            </a>
 
-</mat-toolbar>
+        <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-icon-button class="example-icon mr20 ml20" aria-label="Example icon-button with share icon">
+                Register
+            </a>
+
+        <a *ngIf=" isLoggedIn && user" routerLink="/admin/profile" mat-button class="example-icon mr20 ml20 " aria-label="Example icon-button with share icon ">
+                Welcome back :  {{user.username}}
+            </a>
+
+        <a (click)="logout()" *ngIf=" isLoggedIn " mat-icon-button class="example-icon  ml20 " aria-label="Example icon-button with share icon ">
+                Logout
+            </a>
+
+    </mat-toolbar>
+
+
+    <mat-card>
+        <!-- Dynamic Content -->
+        <router-outlet></router-outlet>
+        <!-- footer -->
+        <app-footer></app-footer>
+    </mat-card>
+
+</mat-sidenav-container>
